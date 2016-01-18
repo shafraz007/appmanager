@@ -48,16 +48,15 @@ CandidateSchema = new SimpleSchema({
 		label: "Division"
 	},
 	gramersevavasama: {
-		type: String,
-		label: "Grama Seva Vasama"
+		type: [Gramasevavasams]
 	},
 	pollingbooth: {
-		type: String,
-		label: "Polling Booth"
+		type: [Pollingbooths]
 	},
 	worked: {
-		type: String,
-		label: "Worked"
+		type: Boolean,
+		defaultValue: false,
+		optional: true
 	},
 	category: {
 		type: String,
@@ -68,24 +67,26 @@ CandidateSchema = new SimpleSchema({
 		label: "Is Educated"
 	},
 	ordinarylevel: {
-		type: String,
-		label: "O / L"
+		type: [Ordinarylevelsubjects]
 	},
 	advancelevel: {
-		type: String,
-		label: "A / L"
+		type: [Advancelevelsubjects]
 	},
 	comments: {
 		type: String,
 		label: "Other (comments)"
 	},
 	applicationsubmited: {
-		type: String,
-		label: "Application Submited"
+		type: Boolean,
+		label: "Application Submited",
+		defaultValue: false,
+		optional: true
 	},
 	jobgiven: {
 		type: String,
-		label: "Application Submited"
+		label: "Application Submited",
+		defaultValue: false,
+		optional: true
 	},
 	createdAt: {
 		type: Date,
