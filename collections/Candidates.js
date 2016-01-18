@@ -1,4 +1,4 @@
-Candidates = new Meteor.Collection('candidates');
+Candidates = new Mongo.Collection('candidates');
 
 Advancelevelsubjects.allow({
 	insert: function(userId, doc) {

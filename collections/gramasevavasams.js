@@ -1,4 +1,4 @@
-Gramasevavasams = new Meteor.Collection('gramasevavasams');
+Gramasevavasams = new Mongo.Collection('gramasevavasams');
 
 Advancelevelsubjects.allow({
 	insert: function(userId, doc) {

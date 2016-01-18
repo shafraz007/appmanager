@@ -1,4 +1,4 @@
-Advancelevelsubjects = new Meteor.Collection('advancelevelsubjects');
+Advancelevelsubjects = new Mongo.Collection('advancelevelsubjects');
 
 Advancelevelsubjects.allow({
 	insert: function(userId, doc) {
