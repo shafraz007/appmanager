@@ -1,6 +1,6 @@
 Candidates = new Mongo.Collection('candidates');
 
-Advancelevelsubjects.allow({
+Candidates.allow({
 	insert: function(userId, doc) {
 		return !!userId;
 	}
@@ -45,13 +45,15 @@ CandidateSchema = new SimpleSchema({
 	},
 	division: {
 		type: String,
-		label: "Division"
+		label: "Devisions"
 	},
 	gramersevavasama: {
-		type: [Gramasevavasams]
+		type: String,
+		label: "Grama Seva Vasama"
 	},
 	pollingbooth: {
-		type: [Pollingbooths]
+		type: String,
+		label: "Polling Booth"
 	},
 	worked: {
 		type: Boolean,
@@ -59,18 +61,19 @@ CandidateSchema = new SimpleSchema({
 		optional: true
 	},
 	category: {
-		type: String,
-		label: "Job Category"
+		type: [String]
 	},
 	educated: {
-		type: String,
-		label: "Is Educated"
+		type: Boolean,
+		label: "Is Educated",
+		defaultValue: false,
+		optional: true
 	},
 	ordinarylevel: {
-		type: [Ordinarylevelsubjects]
+		type: [String]
 	},
 	advancelevel: {
-		type: [Advancelevelsubjects]
+		type: [String]
 	},
 	comments: {
 		type: String,
@@ -83,8 +86,8 @@ CandidateSchema = new SimpleSchema({
 		optional: true
 	},
 	jobgiven: {
-		type: String,
-		label: "Application Submited",
+		type: Boolean,
+		label: "Job Given",
 		defaultValue: false,
 		optional: true
 	},

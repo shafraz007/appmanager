@@ -1,6 +1,6 @@
 Gramasevavasams = new Mongo.Collection('gramasevavasams');
 
-Advancelevelsubjects.allow({
+Gramasevavasams.allow({
 	insert: function(userId, doc) {
 		return !!userId;
 	}
