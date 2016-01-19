@@ -1,15 +1,15 @@
-Pollingbooths = new Mongo.Collection('pollingbooths');
+Poolingbooths = new Meteor.Collection('poolingbooth');
 
-Pollingbooths.allow({
+Poolingbooths.allow({
 	insert: function(userId, doc) {
 		return !!userId;
 	}
 });
 
-PollingboothsSchema = new SimpleSchema({
+PoolingboothSchema = new SimpleSchema({
 	name: {
 		type: String,
-		label: "Name"
+		label: "Poolingbooth Name"
 	},
 	createdAt: {
 		type: Date,
@@ -24,4 +24,4 @@ PollingboothsSchema = new SimpleSchema({
 	
 });
 
-Pollingbooths.attachSchema(PollingboothsSchema);
+Poolingbooths.attachSchema(PoolingboothSchema);

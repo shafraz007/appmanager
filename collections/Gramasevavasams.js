@@ -1,6 +1,6 @@
-Gramasevavasams = new Mongo.Collection('gramasevavasams');
+Gramasevavasam = new Meteor.Collection('gramasevavasam');
 
-Gramasevavasams.allow({
+Gramasevavasam.allow({
 	insert: function(userId, doc) {
 		return !!userId;
 	}
@@ -9,7 +9,7 @@ Gramasevavasams.allow({
 GramasevavasamSchema = new SimpleSchema({
 	name: {
 		type: String,
-		label: "Name"
+		label: "G.Vasam Name"
 	},
 	createdAt: {
 		type: Date,
@@ -24,4 +24,4 @@ GramasevavasamSchema = new SimpleSchema({
 	
 });
 
-Gramasevavasams.attachSchema(GramasevavasamSchema);
+Gramasevavasam.attachSchema(GramasevavasamSchema);

@@ -1,27 +1,32 @@
-Divisions = new Mongo.Collection('divisions');
+Divisions = new Meteor.Collection('divisions');
 
 Divisions.allow({
-	insert: function(userId, doc) {
+	insert: function(userId, doc){
 		return !!userId;
 	}
 });
 
-DivisionsSchema = new SimpleSchema({
+
+DivisionSchema = new SimpleSchema({
+
 	name: {
 		type: String,
-		label: "Name"
+		label: "DivisionName"
 	},
-	createdAt: {
+
+	CreatedAt: {
 		type: Date,
 		label: "Created at",
 		autoValue: function() {
 			return new Date()
 		},
+
 		autoform: {
 			type: "hidden"
 		}
+
 	}
-	
 });
 
-Divisions.attachSchema(DivisionsSchema);
+
+Divisions.attachSchema(DivisionSchema);
