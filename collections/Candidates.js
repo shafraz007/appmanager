@@ -1,3 +1,32 @@
+Poolingbooths = new Meteor.Collection('poolingbooth');
+
+Poolingbooths.allow({
+	insert: function(userId, doc) {
+		return !!userId;
+	}
+});
+
+PoolingboothSchema = new SimpleSchema({
+	name: {
+		type: String,
+		label: "Poolingbooth Name"
+	},
+	createdAt: {
+		type: Date,
+		label: "Created at",
+		autoValue: function() {
+			return new Date()
+		},
+		autoform: {
+			type: "hidden"
+		}
+	}
+	
+});
+
+Poolingbooths.attachSchema(PoolingboothSchema);
+
+
 Candidates = new Mongo.Collection('candidates');
 
 Candidates.allow({
@@ -15,6 +44,34 @@ CandidateSchema = new SimpleSchema({
 		type: String,
 		label: "Name With Initials"
 	},
+	dropdown : {
+    type : String,
+    label : "Select One",
+    autoform : {
+      options: function(){
+        var doc = Poolingbooths.find({});
+        var docOptions = doc && doc.options;
+        return _.map(docOptions, function(value){
+          return {
+            label: value,
+            value: value
+          };
+        });
+      }
+    }
+  },
+  service: {
+    type: String,
+    label: " ",
+    autoform: {
+      type: "select",
+      firstOption: 'Choose a provider',
+      options: function () {
+        console.log(Poolingbooths.find({}));
+        return Poolingbooths.find({}).map(function(service){return {label: service.name, value: service.name};});
+      }
+    }
+  },
 	gender: {
 		type: String,
 		label: "Gender"

@@ -6,6 +6,8 @@ Advancelevelsubjects.allow({
 	}
 });
 
+
+
 AdvancelevelsubjectSchema = new SimpleSchema({
 	name: {
 		type: String,
@@ -21,6 +23,8 @@ AdvancelevelsubjectSchema = new SimpleSchema({
 			type: "hidden"
 		}
 	}
+
+	 
 });
 
 Advancelevelsubjects.attachSchema(AdvancelevelsubjectSchema);
