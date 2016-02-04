@@ -17,3 +17,11 @@ Meteor.publish('gramasevavasam', function() {
 Meteor.publish('poolingbooth', function() {
 	return Poolingbooths.find({});
 });
+
+Meteor.publish('jobcategories', function() {
+	return Jobcategories.find({});
+});
+
+Meteor.publish('ordinarylevelsubjects', function() {
+	return Ordinarylevelsubjects.find({});
+});
